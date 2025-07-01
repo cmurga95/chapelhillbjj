@@ -139,7 +139,7 @@ def server(input, output, session):
         filtered_df = df[df["class"] == class_name].copy()
         
         # Format dates for display
-        filtered_df["last_promotion_date"] = filtered_df["last_promotion_date"].dt.strftime('%Y-%m-%d')
+        filtered_df["last_promotion_date"] = pd.to_datetime(filtered_df["last_promotion_date"]).dt.strftime('%Y-%m-%d')
         
         return filtered_df
 
