@@ -1,0 +1,23 @@
+# render.yaml
+services:
+  - type: web
+    name: fastapi-service
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: SUPABASE_URL
+        value: YOUR_SUPABASE_URL
+      - key: SUPABASE_KEY
+        value: YOUR_SUPABASE_KEY
+
+  - type: web
+    name: shiny-service
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: shiny run --host 0.0.0.0 --port $PORT update_kids_shiny.py
+    envVars:
+      - key: SUPABASE_URL
+        value: YOUR_SUPABASE_URL
+      - key: SUPABASE_KEY
+        value: YOUR_SUPABASE_KEY
