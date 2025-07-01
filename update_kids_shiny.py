@@ -5,7 +5,7 @@ from datetime import datetime
 from shiny.types import SilentException
 
 # === CONFIG ===
-API_BASE = "http://localhost:8000"
+API_BASE = "https://kids-api-access.onrender.com"
 
 # === HELPERS ===
 def load_kids():
