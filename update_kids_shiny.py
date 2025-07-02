@@ -3,6 +3,8 @@ import pandas as pd
 import requests
 from datetime import datetime
 from shiny.types import SilentException
+import supabase_endpoint
+
 
 # === CONFIG ===
 API_BASE = "https://kids-api-access.onrender.com"
@@ -11,9 +13,9 @@ API_BASE = "https://kids-api-access.onrender.com"
 def load_kids():
     """Load kids table via FastAPI"""
     try:
-        response = requests.get(f"{API_BASE}/kids")
-        response.raise_for_status()
-        data = response.json()
+        data = supabase_endpoint.get_checkins_kids()
+        # response.raise_for_status()
+        # data = response.json()
         df = pd.DataFrame(data)
         df["last_promotion_date"] = pd.to_datetime(df["last_promotion_date"], errors="coerce")
         return df
@@ -24,9 +26,9 @@ def load_kids():
 def load_kids_view():
     """Load kids VIEW via FastAPI"""
     try:
-        response = requests.get(f"{API_BASE}/checkins_kids_view")
-        response.raise_for_status()
-        data = response.json()
+        # response = requests.get(f"{API_BASE}/checkins_kids_view")
+        # response.raise_for_status()
+        data = supabase_endpoint.get_checkins_kids_view()
         df = pd.DataFrame(data)
         df["last_promotion_date"] = pd.to_datetime(df["last_promotion_date"], errors="coerce")
         return df
@@ -248,24 +250,31 @@ def server(input, output, session):
             print(updates)
         # Send updates to API
         success_count = 0
+        # Good pattern: map fields to functions (not results!)
+        endpoint_map = {
+            "last_promotion_date": supabase_endpoint.update_promotion_date,
+            "stripes": supabase_endpoint.update_promotion_stripes,
+            "current_rank": supabase_endpoint.update_promotion_rank,
+            "start_date": supabase_endpoint.update_start_date
+        }
+
         for update in updates:
+            d = {"client": update["client"], "field": update["field"], "value": update["value"]}
             try:
-                endpoint = {
-                    "last_promotion_date": f"{API_BASE}/kids/update-promotion-date",
-                    "stripes": f"{API_BASE}/kids/update-stripes",
-                    "current_rank": f"{API_BASE}/kids/update-rank",
-                    "start_date": f"{API_BASE}/kids/update-start_date"
-                }.get(update["field"], f"{API_BASE}/kids/update")
-                
-                response = requests.patch(
-                    endpoint,
-                    json={"client": update["client"], "field": update["field"], "value": update["value"]},
-                    timeout=5
-                )
-                response.raise_for_status()
-                success_count += 1
+                fn = endpoint_map.get(update["field"])
+                if fn is None:
+                    print(f"Unknown field: {update['field']}")
+                    continue  # Skip if no matching update function
+
+                result = fn(d)  # ← Now only ONE function runs!
+                # print(f"Update result: {result}")
+                print(f"Updated {update['field']} for client {update['client']}: {result}")
+                if result.get("status") == "success":
+                    success_count += 1
+                else:
+                    print(f"Failed to update {update['field']} for client {update['client']}: {result}")
             except Exception as e:
-                print(f"Error updating {update['client']}: {str(e)}")
+                print(f"Error updating {update['field']} for client {update['client']}: {e}")
         
         # Refresh data if updates were successful
         if success_count > 0:
