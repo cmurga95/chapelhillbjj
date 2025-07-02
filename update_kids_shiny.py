@@ -7,7 +7,7 @@ import supabase_endpoint
 
 
 # === CONFIG ===
-API_BASE = "https://kids-api-access.onrender.com"
+# API_BASE = "https://kids-api-access.onrender.com"
 
 # === HELPERS ===
 def load_kids():
