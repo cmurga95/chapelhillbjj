@@ -1,0 +1,28 @@
+name: Scrape and Push to Supabase
+
+on:
+  schedule:
+    - cron: '0 4 * * *'  # Runs every day at 12:00 UTC (adjust as needed)
+  workflow_dispatch:  # Allows manual run
+
+jobs:
+  scrape-and-upload:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run scraping script
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+        run: python pushdata.py
