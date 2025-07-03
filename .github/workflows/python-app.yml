@@ -36,9 +36,9 @@ jobs:
           # DATABASE_URL=postgresql://postgres:[YOUR-PASSWORD]@db.jpvwkzrntwhelksauhft.supabase.co:5432/postgres
           
           #pushpress creds
-          URL_PP: ${{ secrets.URL_PP }}
-          EMAIL_PP: ${{ secrets.EMAIL_PP }}
-          PASSWORD_PP: ${{ secrets.PASSWORD_PP }}
+          URL_PP: ${{ secrets.url_pp }}
+          EMAIL_PP: ${{ secrets.email_pp }}
+          PASSWORD_PP: ${{ secrets.password_pp }}
           
           ##supabase api
           
