@@ -8,15 +8,13 @@ It demonstrates how to build a full-stack data pipeline, leveraging automation, 
 ### 🚀 Key Features
 - ✅ Automated scraping of an embedded dashboard (with secure login & filter selection)
   
-- ✅ Dynamic query manipulation (e.g., increase export limits)
-  
 - ✅ Parsing and storing clean data in Supabase (PostgreSQL)
   
 - ✅ SQL views & triggers to transform and manage data
   
-- ✅ Interactive web app in Shiny for real-time monitoring
+- ✅ Interactive web app in Shiny for real-time tracking of kids assistance and engagement
   
-- ✅ Additional Looker dashboard to track new leads & kids’ attendance trends
+- ✅ Additional Looker dashboard to track new leads
 
 ### 🔗 Full Workflow
 ```mermaid
