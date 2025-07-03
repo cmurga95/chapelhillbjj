@@ -28,4 +28,18 @@ jobs:
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+          USER: ${{ secrets.USER }}
+          PASSWORD: ${{secrets.PASSWORD }}
+          HOST: ${{secrets.HOST }}
+          PORT: ${{secrets.PORT }}
+          DBNAME: ${{secrets.DBNAME }}
+          # DATABASE_URL=postgresql://postgres:[YOUR-PASSWORD]@db.jpvwkzrntwhelksauhft.supabase.co:5432/postgres
+          
+          #pushpress creds
+          URL_PP: ${{ secrets.URL_PP }}
+          EMAIL_PP: ${{ secrets.EMAIL_PP }}
+          PASSWORD_PP: ${{ secrets.PASSWORD_PP }}
+          
+          ##supabase api
+          
         run: python pushdata.py
