@@ -62,7 +62,9 @@ flowchart LR
 
 ### ✨ Impact
 ✅ Improved data accuracy & consistency by automating manual CSV exports
+
 ✅ Reduced admin effort for tracking kids’ promotions & new leads
+
 ✅ Better business insights with self-serve dashboards & real-time updates
 
 ### 📂 Repository Structure
