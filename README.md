@@ -6,15 +6,15 @@ This project automates the extraction, transformation, and reporting of member a
 It demonstrates how to build a full-stack data pipeline, leveraging automation, cloud database engineering, and interactive dashboards to generate actionable business insights. I originally used fastAPI to manage CRUD operations, but since I am hosting the app in render's free tier I had to use 2 services, which caused a delay. I opted to use SupaBase-py and keep everything in a single service.
 
 ### 🚀 Key Features
-- ✅ Automated scraping of an embedded dashboard (with secure login & filter selection)
+- Automated scraping of an embedded dashboard (with secure login & filter selection)
   
-- ✅ Parsing and storing clean data in Supabase (PostgreSQL)
+- Parsing and storing clean data in Supabase (PostgreSQL)
   
-- ✅ SQL views & triggers to transform and manage data
+- SQL views & triggers to transform and manage data
   
-- ✅ Interactive web app in Shiny for real-time tracking of kids assistance and engagement
+- Interactive web app in Shiny for real-time tracking of kids assistance and engagement
   
-- ✅ Additional Looker dashboard to track new leads
+- Additional Looker dashboard to track new leads
 
 ### 🔗 Full Workflow
 ```mermaid
@@ -83,7 +83,7 @@ Writing efficient SQL for real-time views and triggers.
 
 Combining open-source and SaaS BI tools for end-to-end reporting.
 
-### ✅ How to Use
+### How to Use
 Clone this repo
 
 Add your .env file with credentials (Playwright auth, Supabase keys).
@@ -104,5 +104,5 @@ Access your dashboards in Shiny and Looker!
 - All APIs are secret and not hardcoded
 
 ### 👋 About Me
-I’m a data analyst passionate about automating workflows and delivering clear insights. Strong problem solving skills.
+I’m a data analyst passionate about automating workflows. manage data infrastructure delivering clear insights. Strong problem solving skills.
 Let’s connect!
