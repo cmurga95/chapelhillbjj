@@ -6,12 +6,12 @@ This project automates the extraction, transformation, and reporting of member a
 It demonstrates how to build a full-stack data pipeline, leveraging automation, cloud database engineering, and interactive dashboards to generate actionable business insights.
 
 ### 🚀 Key Features
-✅ Automated scraping of an embedded dashboard (with secure login & filter selection)
-✅ Dynamic query manipulation (e.g., increase export limits)
-✅ Parsing and storing clean data in Supabase (PostgreSQL)
-✅ SQL views & triggers to transform and manage data
-✅ Interactive web app in Shiny for real-time monitoring
-✅ Additional Looker dashboard to track new leads & kids’ attendance trends
+- ✅ Automated scraping of an embedded dashboard (with secure login & filter selection)
+- ✅ Dynamic query manipulation (e.g., increase export limits)
+- ✅ Parsing and storing clean data in Supabase (PostgreSQL)
+- ✅ SQL views & triggers to transform and manage data
+- ✅ Interactive web app in Shiny for real-time monitoring
+- ✅ Additional Looker dashboard to track new leads & kids’ attendance trends
 
 ### 🔗 Full Workflow
 ```mermaid
@@ -28,22 +28,18 @@ flowchart LR
   C --> E
 ```
 ### How it works:
-1️⃣ Authenticate → filter → export fresh data automatically
-2️⃣ Clean and push data to Supabase
-3️⃣ Use views to filter kids vs. adults & identify new members
-4️⃣ Triggers keep summary tables updated
-5️⃣ Serve insights via Shiny and Looker dashboards
+1. Authenticate → filter → export fresh data automatically
+2. Clean and push data to Supabase
+3. Use views to filter kids vs. adults & identify new members
+4. Triggers keep summary tables updated
+5. Serve insights via Shiny and Looker dashboards
 
 ### 🗄️ Data Pipeline Highlights
-Automation: Playwright handles login, filter selection, dynamic CSV exports, and URL manipulation.
-
-Cloud Storage: Supabase Postgres stores all check-ins, sessions, and member details.
-
-Data Modeling: SQL views separate kids’ attendance and identify new kids for promotions.
-
-Business Logic: Triggers & functions automatically manage new lead records.
-
-Reporting: Shiny dashboard for internal use, Looker for stakeholder reporting.
+- Automation: Playwright (Python) handles automatic login, filter selection, dynamic CSV exports, URL manipulation and API calls to SupaBase.
+- Cloud Storage: Supabase Postgres stores all check-ins, sessions, and member details.
+- Data Modeling: SQL views separate kids’ attendance and identify new kids for promotions. 
+- Business Logic: Triggers & functions automatically manage new lead and kids records.
+- Reporting: Shiny dashboard for internal use, Looker for stakeholder reporting.
 
 ### 🔒 Security & Best Practices
 .env files used for API keys and credentials — never hardcoded.
