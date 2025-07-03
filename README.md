@@ -57,7 +57,7 @@ flowchart LR
 | **Data Storage** | Supabase (PostgreSQL)     |
 | **Processing**   | SQL (views, triggers)     |
 | **Reporting**    | Shiny, Looker Studio      |
-| **Deployment**   | GitHub Actions & Supabase |
+| **Deployment**   | GitHub Actions, Supabase and Render |
 
 
 ### ✨ Impact
