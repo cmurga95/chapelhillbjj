@@ -89,11 +89,14 @@ Supabase will automatically update views & triggers.
 Access your dashboards in Shiny and Looker!
 
 ### 🤝 License & Notes
-This project is for demonstration purposes only.
-All data shown is fictional or test data.
-*** No proprietary member information is shared.***
-All APIs are secret and not hardcoded
+- This project is for demonstration purposes only.
+
+- All data shown is fictional or test data.
+
+- ***No proprietary member information is shared.***
+
+- All APIs are secret and not hardcoded
 
 ### 👋 About Me
-I’m a data analyst passionate about automating workflows and delivering clear insights.
+I’m a data analyst passionate about automating workflows and delivering clear insights. Strong problem solving skills.
 Let’s connect!
