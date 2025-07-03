@@ -24,7 +24,9 @@ flowchart LR
   C["SQL Views & Triggers"]
   D["Shiny Web App"]
   E["Looker Dashboard"]
+  PP["PushPress"]
 
+  PP --> A
   A --> B
   B --> C
   C --> D
