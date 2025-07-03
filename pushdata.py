@@ -76,6 +76,9 @@ def clean_and_insert_data(new_data):
             print("No new data to insert")
 
 def main():
+    print(f"EMAIL_PP: {os.getenv('EMAIL_PP')}")
+    print(f"PASSWORD_PP: {os.getenv('PASSWORD_PP')}")
+    print(f"URL_PP: {os.getenv('URL_PP')!r}")  # !r shows if it's empty or None
     # Get data (await the coroutine)
     new_data = asyncio.run(login_and_get_csv(
         os.getenv("EMAIL_PP"),
