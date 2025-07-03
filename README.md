@@ -26,6 +26,7 @@ flowchart LR
   B --> C
   C --> D
   C --> E
+  D <--> B
 ```
 ### How it works:
 1. Authenticate → filter → export fresh data automatically
