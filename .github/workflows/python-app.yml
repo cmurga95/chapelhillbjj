@@ -36,9 +36,8 @@ jobs:
           URL_PP: ${{ secrets.URL_PP }}
           EMAIL_PP: ${{ secrets.EMAIL_PP }}
           PASSWORD_PP: ${{ secrets.PASSWORD_PP }}
-          run: |
+        run: |
             echo "EMAIL_PP is set: ${EMAIL_PP:+yes}"
             echo "PASSWORD_PP is set: ${PASSWORD_PP:+yes}"
             echo "URL_PP is set: ${URL_PP:+yes}"
-        
-        run: python pushdata.py
+            python pushdata.py
