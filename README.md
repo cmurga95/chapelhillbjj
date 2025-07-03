@@ -62,12 +62,12 @@ flowchart LR
 
 ### 📂 Repository Structure
 ```bash
-├── playwright/              # Scraper scripts
-├── supabase/                # DB schema, views, and triggers
-├── shiny_app/               # Web app source code
-├── looker/                  # Dashboard configs (example screenshots/queries)
+├── daily_update.py/         # Scraper scripts
+├── pushdata.py/             # Saving data to supabase
+├── update_kids_shiny.py/    # Web app source code
+├── main.py/                 # FastAPI
 ├── README.md
-└── .env.example             # Environment variable template
+└── requirements.txt         # Packages
 ```
 ### What I Learned
 Building robust automation for web scraping with session handling.
