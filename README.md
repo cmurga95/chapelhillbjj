@@ -16,11 +16,11 @@ It demonstrates how to build a full-stack data pipeline, leveraging automation, 
 ### 🔗 Full Workflow
 ```mermaid
 flowchart LR
-  A[Automated Scraper<br>(Python + Playwright)]
-  B[Supabase<br>(PostgreSQL)]
-  C[SQL Views & Triggers]
-  D[Shiny Web App]
-  E[Looker Dashboard]
+  A["***Automated Scraper***(Python + Playwright)"]
+  B["***Supabase***(PostgreSQL)"]
+  C["SQL Views & Triggers"]
+  D["Shiny Web App"]
+  E["Looker Dashboard"]
 
   A --> B
   B --> C
